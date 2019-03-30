@@ -1,0 +1,61 @@
+{% load static %}
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+  </head>
+
+  <body>
+    <nav class="navbar bg-primary navbar-dark">
+      <a class="navbar-brand" href="{% url 'index' %}">
+        <i class="fa d-inline fa-lg fa-car"></i>
+        <b class="ml-1"> Trip Gas Cost Calculator</b>
+      </a>
+    </nav>
+    <div class="row">
+        <div class="col-md-6" style="">
+          <form method="post" action="">
+            {% csrf_token %}
+            <div class="card">
+              <div class="card-header"> Origin Address </div>
+              <div class="card-body">
+                {{ origin.origin_address.as_widget }}
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-header"> Destination Address</div>
+              <div class="card-body">
+                {{ destination.destination_address.as_widget }}
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-header"> Gas Price Per Gallon</div>
+              <div class="card-body">
+                {{ gas_price.gas_price.as_widget }}
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-header"> Vehicle's MPG</div>
+              <div class="card-body">
+                {{ mpg.mpg.as_widget }}
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-header">Number of People Cost is Split Among</div>
+              <div class="card-body">
+                {{ num_people.num_people.as_widget }}
+              </div>
+            </div>
+            <input class="btn btn-primary w-100 my-1" type="submit" value="Calculate" />
+          </form>
+      </div>
+      <div class="col-md-6" style="">
+      {% block content %}
+      {% endblock %}
+      </div>
+    </div>
+</html>
