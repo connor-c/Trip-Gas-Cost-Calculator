@@ -1,4 +1,4 @@
-# Trip-Gas-Cost-Calculator
+# Trip Gas Cost Calculator
 by Connor Couture
 
 **Technical Bits**
