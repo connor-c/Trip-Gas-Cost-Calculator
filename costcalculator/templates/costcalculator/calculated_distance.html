@@ -1,22 +1,22 @@
-{% extends 'costcalculator/index.html' %}
+{% extends 'costcalculator/use_distance.html' %}
 
 {% block content %}
   <div class="card">
     <div class="card-header" contenteditable="true"> Calculated Trip Gas Cost</div>
     <div class="card-body">
-      <h4>${{ trip_cost }}</h4>
+      <h4>{{ trip_cost }}</h4>
     </div>
   </div>
   <div class="card">
     <div class="card-header"> Calculated Gas Cost Per Person</div>
     <div class="card-body">
-      <h4>${{ cost_per_person }}</h4>
+      <h4>{{ cost_per_person }}</h4>
     </div>
   </div>
   <div class="card">
     <div class="card-header"> Trip Distance</div>
     <div class="card-body">
-      <h4>{{ distance }} miles</h4>
+      <h4>{{ calculated_distance }}</h4>
     </div>
   </div>
 {% endblock %}

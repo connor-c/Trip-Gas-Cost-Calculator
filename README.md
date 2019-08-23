@@ -3,11 +3,10 @@ by Connor Couture
 
 **Technical Bits**
 
-Uses Django, Bootstrap, and MySQL. MapQuest API used to calculate distance between two addresses. 
+Uses Django, Bootstrap, and MySQL. MapQuest API used to calculate distance between two addresses. User can also use distance in miles to calculate the gas trip cost.
 
 **Future Plans**
 
-- Add option to just provide distance without using addresses.
 - Add option to switch between metric and customary units.
 - Add option to provide origin address via using user's current location.
 - Add automatic language and unit localization.
